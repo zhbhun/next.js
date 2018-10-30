@@ -1,6 +1,10 @@
-- [page-load.js](./lib/page-loader.js)
+- [.lib/page-loader.js](./lib/page-loader.js)
 
-    - 开发环境加载脚本的时候加上时间戳（解决客户端可能存在的缓存问题）
+    开发环境加载脚本的时候加上时间戳（解决客户端可能存在的缓存问题）
+
+- [./server/document.js](./server/document.js)
+
+    开发环境的脚本链接增加时间戳（解决客户端可能存在的缓存问题）
 
 ---
 
