@@ -1,3 +1,13 @@
+- [.lib/page-loader.js](./lib/page-loader.js)
+
+    开发环境加载脚本的时候加上时间戳（解决客户端可能存在的缓存问题）
+
+- [./server/document.js](./server/document.js)
+
+    开发环境的脚本链接增加时间戳（解决客户端可能存在的缓存问题）
+
+---
+
 <img width="112" alt="screen shot 2016-10-25 at 2 37 27 pm" src="https://cloud.githubusercontent.com/assets/13041/19686250/971bf7f8-9ac0-11e6-975c-188defd82df1.png">
 
 [![NPM version](https://img.shields.io/npm/v/next.svg)](https://www.npmjs.com/package/next)
