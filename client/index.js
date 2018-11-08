@@ -58,7 +58,7 @@ const headManager = new HeadManager()
 const appContainer = document.getElementById('__next')
 
 let lastAppProps
-let webpackHMR
+// let webpackHMR
 export let router
 export let ErrorComponent
 let Component
@@ -70,9 +70,9 @@ export default async ({
   webpackHMR: passedWebpackHMR
 } = {}) => {
   // This makes sure this specific line is removed in production
-  if (process.env.NODE_ENV === 'development') {
-    webpackHMR = passedWebpackHMR
-  }
+  // if (process.env.NODE_ENV === 'development') {
+  //   webpackHMR = passedWebpackHMR
+  // }
   ErrorComponent = await pageLoader.loadPage('/_error')
   App = await pageLoader.loadPage('/_app')
 
@@ -128,9 +128,10 @@ export async function render (props) {
 export async function renderError (props) {
   const {App, err} = props
 
-  if (process.env.NODE_ENV !== 'production') {
-    throw webpackHMR.prepareError(err)
-  }
+  // # 保证生产和开发表现一致
+  // if (process.env.NODE_ENV !== 'production') {
+  //   throw webpackHMR.prepareError(err)
+  // }
 
   // Make sure we log the error to the console, otherwise users can't track down issues.
   console.error(err)
