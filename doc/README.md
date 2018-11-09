@@ -2,6 +2,8 @@
 
 > /lib/router/router.js
 
+### 跳转逻辑
+
 - 新开
 
     - router.push(url, as, options) —— 传入要打开的地址
@@ -20,3 +22,10 @@
     - router.replace(url, as, options) —— 调用路由替换函数
     - router.change('pushState', url, as, options) —— 调用路由修改函数
     - 同“新开”...
+
+### 误区
+
+- url vs as
+
+    - url：是 next 基于文件系统生成的路由地址
+    - as：是服务端定制的路由地址
