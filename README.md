@@ -10,6 +10,10 @@
 
     changeState 时给 window.history 的 state 增加 key 值
 
+- [./build/webpack/loaders/hot-self-accept-loader.js](./build/webpack/loaders/hot-self-accept-loader.js)
+
+    去掉热加载
+
 ---
 
 <img width="112" alt="screen shot 2016-10-25 at 2 37 27 pm" src="https://cloud.githubusercontent.com/assets/13041/19686250/971bf7f8-9ac0-11e6-975c-188defd82df1.png">

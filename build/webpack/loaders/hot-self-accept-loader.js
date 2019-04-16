@@ -32,6 +32,8 @@ module.exports = function (content: string, sourceMap: any) {
 
       if (module.hot.status() === 'idle') return
 
+      location.reload()
+
       var components = next.router.components
       for (var r in components) {
         if (!components.hasOwnProperty(r)) continue
