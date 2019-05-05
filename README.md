@@ -14,6 +14,10 @@
 
     去掉热加载
 
+- [./build/webpack/plugins/pages-manifest-plugin.js](./build/webpack/plugins/pages-manifest-plugin.js)
+
+    解决 window 下 pages-manifest.json 的路径存在反斜杠问题
+
 ---
 
 <img width="112" alt="screen shot 2016-10-25 at 2 37 27 pm" src="https://cloud.githubusercontent.com/assets/13041/19686250/971bf7f8-9ac0-11e6-975c-188defd82df1.png">
