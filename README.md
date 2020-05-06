@@ -8,7 +8,8 @@
 
 - [./lib/router/router.js](./lib/router/router.js)
 
-    changeState 时给 window.history 的 state 增加 key 值
+    1. changeState 时给 window.history 的 state 增加 key 值
+    2. reload 时如果目标路由不匹配，直接刷新当前路由
 
 - [./build/webpack/loaders/hot-self-accept-loader.js](./build/webpack/loaders/hot-self-accept-loader.js)
 
