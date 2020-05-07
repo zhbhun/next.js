@@ -1,6 +1,19 @@
 module.exports = {
   'presets': [
-    '@babel/preset-env',
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: '10',
+          browsers: ['iOS >= 8', 'Android >= 4.4', 'last 2 QQAndroid versions']
+        },
+        spec: false,
+        loose: false,
+        modules: 'commonjs',
+        useBuiltIns: 'usage',
+        corejs: 2
+      }
+    ],
     '@babel/preset-react',
     '@babel/preset-flow'
   ],
