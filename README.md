@@ -20,6 +20,17 @@
     解决 window 下 pages-manifest.json 的路径存在反斜杠问题
 
 - 将 package.json 中的开发依赖提取到独立的模块 `next-devdep`
+- [./.babelrc.js](./.babelrc.js)
+
+    增加兼容性配置
+
+- [./taskfile.js](./taskfile.js)
+
+    解决新版 node process 需要手动引入问题
+
+- [./package.json](./package.json)
+
+    取消 node-sass 的版本限定，以解决无法安装依赖问题
 
 ---
 
