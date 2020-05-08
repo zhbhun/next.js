@@ -32,13 +32,23 @@ export function getCssModuleLoader(
       modules: {
         // Disallow global style exports so we can code-split CSS and
         // not worry about loading order.
-        mode: 'pure',
+        // mode: 'pure',
+        /**
+         * @custom 使用 local 以便于兼容旧的项目
+         */
+        mode: 'local',
         // Generate a friendly production-ready name so it's
         // reasonably understandable. The same name is used for
         // development.
         // TODO: Consider making production reduce this to a single
         // character?
-        getLocalIdent: getCssModuleLocalIdent,
+        // getLocalIdent: getCssModuleLocalIdent,
+        /**
+         * @custom 生成环境使用更精简的类名
+         *
+         */
+        localIdentName: ctx.isDevelopment ? undefined : '[hash:base64:5]',
+        getLocalIdent: ctx.isDevelopment ? getCssModuleLocalIdent : undefined,
       },
     },
   })
