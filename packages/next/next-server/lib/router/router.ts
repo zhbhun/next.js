@@ -2,7 +2,7 @@
 // tslint:disable:no-console
 import { ParsedUrlQuery } from 'querystring'
 import { ComponentType } from 'react'
-import { parse, UrlObject } from 'url'
+import { format, parse, UrlObject } from 'url'
 import mitt, { MittEmitter } from '../mitt'
 import {
   AppContextType,
@@ -411,7 +411,21 @@ export default class Router implements BaseRouter {
         return resolve(true)
       }
 
+      /**
+       * @custom 增加路由标识
+       */
+      let { pathname: asPathname, query: asQuery } = parse(as, true)
+      let { pathname, query, protocol } = parse(url, true)
+      asQuery['_'] = String(parse(window.location.href, true).query._ || '0')
+      if (method === 'pushState') {
+        asQuery['_'] = String(Number(asQuery['_']) + 1)
+      }
+      query['_'] = asQuery['_']
+      url = format({ pathname, query })
+      as = format({ pathname: asPathname, query: asQuery })
+      /*
       const { pathname, query, protocol } = parse(url, true)
+       */
 
       if (!pathname || protocol) {
         if (process.env.NODE_ENV !== 'production') {
@@ -430,6 +444,12 @@ export default class Router implements BaseRouter {
       if (!this.urlIsNew(as)) {
         method = 'replaceState'
       }
+
+      /**
+       * @custom 提前更新 history
+       */
+      Router.events.emit('beforeHistoryChange', as)
+      this.changeState(method, url, as, options)
 
       const route = toRoute(pathname)
       const { shallow = false } = options
@@ -476,8 +496,11 @@ export default class Router implements BaseRouter {
           return resolve(false)
         }
 
-        Router.events.emit('beforeHistoryChange', as)
-        this.changeState(method, url, as, options)
+        /**
+         * @custom 已经提前触发，这里不再调用
+         */
+        // Router.events.emit('beforeHistoryChange', as)
+        // this.changeState(method, url, as, options)
 
         if (process.env.NODE_ENV !== 'production') {
           const appComp: any = this.components['/_app'].Component
@@ -486,7 +509,7 @@ export default class Router implements BaseRouter {
             !(routeInfo.Component as any).getInitialProps
         }
 
-        this.set(route, pathname, query, as, routeInfo)
+        this.set(route, pathname as string, query, as, routeInfo)
 
         if (error) {
           Router.events.emit('routeChangeError', error, as)
@@ -553,6 +576,10 @@ export default class Router implements BaseRouter {
       loadErrorFail?: boolean
     ) => {
       return new Promise(resolve => {
+        /**
+         * @custom 忽略 PAGE_LOAD_ERROR，交给 _error 组件处理
+         */
+        /*
         if (err.code === 'PAGE_LOAD_ERROR' || loadErrorFail) {
           // If we can't load the page it could be one of following reasons
           //  1. Page doesn't exists
@@ -573,6 +600,7 @@ export default class Router implements BaseRouter {
           // @ts-ignore TODO: fix the control flow here
           return resolve({ error: err })
         }
+        */
 
         resolve(
           this.fetchComponent('/_error')
