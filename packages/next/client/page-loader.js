@@ -247,6 +247,13 @@ export default class PageLoader {
     route = normalizeRoute(route)
     let scriptRoute = route === '/' ? '/index.js' : `${route}.js`
 
+    /**
+     * @custom 开发环境增加时间戳
+     */
+    if (process.env.NODE_ENV === 'development') {
+      scriptRoute += '?ts=' + Date.now()
+    }
+
     const url = `${this.assetPrefix}/_next/static/${encodeURIComponent(
       this.buildId
     )}/pages${encodeURI(scriptRoute)}`
