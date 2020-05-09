@@ -47,8 +47,13 @@ export function getCssModuleLoader(
          * @custom 生成环境使用更精简的类名
          *
          */
-        localIdentName: ctx.isDevelopment ? undefined : '[hash:base64:5]',
-        getLocalIdent: ctx.isDevelopment ? getCssModuleLocalIdent : undefined,
+        ...(ctx.isDevelopment
+          ? {
+              getLocalIdent: getCssModuleLocalIdent,
+            }
+          : {
+              localIdentName: '[hash:base64:5]',
+            }),
       },
     },
   })
