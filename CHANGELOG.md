@@ -1,13 +1,23 @@
-1. 定制 next 的依赖模块的版本
+1. custom/dependencies：定制依赖模块
 
-   去掉版本限定
+   1. 去掉版本限定；
+   2. 将开发依赖迁移到一个独立的库，以避免线上部署时需要安装过多无用的开发依赖；
 
-2. 调整浏览器 history 的变更时机，并在浏览器的地址上加入路由标识
-3. 脚本等静态资源增加时间戳
+2. custom/router：定制路由器
 
-   路由脚本需要添加时间戳
+   1. 调整浏览器 history 的变更时机，在路由页面加载之前就修改 history；
+   2. 浏览器的地址上加入路由标识：`_`；
+   3. 路由加载失败去掉“硬”重载（强制刷新）逻辑；
 
-4. 调整 css module 生产环境的类名生成方式
+      TODO: 目前网络问题会导致无限的重试加载 \_error 页面组件
+
+3. custom/assets-timestamp：给静态资源的地址增加时间戳
+
+   路由脚本动态加载需要添加时间戳：`next/client/page-loader.js`
+
+4. custom/css-loader：定制 CSS 加载器
+
+   调整 css module 生产环境的类名生成方式：`next/build/webpack/config/blocks/css/loaders/modules.ts`
 
 ## TODO
 
