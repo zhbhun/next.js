@@ -5482,15 +5482,15 @@ core-js@3.1.4:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.1.4.tgz#3a2837fc48e582e1ae25907afcd6cf03b0cc7a07"
   integrity sha512-YNZN8lt82XIMLnLirj9MhKDFZHalwzzrL9YLt6eb0T5D0EDl4IQ90IGkua8mHbnxNrkj1d8hbdizMc0Qmg1WnQ==
 
-core-js@3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
-  integrity sha512-4paDGScNgZP2IXXilaffL9X7968RuvwlkK3xWtZRVqgd8SYNiVKRJvkFd1aqqEuPfN7E68ZHEp9hDj6lHj4Hyw==
-
 core-js@^2.6.5:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
   integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
+
+core-js@^3.6.5:
+  version "3.6.5"
+  resolved "https://registry.npm.taobao.org/core-js/download/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
+  integrity sha1-c5XcJzrzf7LlDpvT2f6EEoUjHRo=
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -11328,6 +11328,48 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
+
+next-devdep@9.3.6-beta.0:
+  version "9.3.6-beta.0"
+  resolved "https://registry.npm.taobao.org/next-devdep/download/next-devdep-9.3.6-beta.0.tgz#11f4d93e57a18aad3c5119af041b902fecec7d47"
+  integrity sha1-EfTZPlehiq08URmvBBuQL+zsfUc=
+  dependencies:
+    "@babel/core" "^7.7.2"
+    "@babel/plugin-proposal-class-properties" "^7.7.0"
+    "@babel/plugin-proposal-nullish-coalescing-operator" "^7.7.4"
+    "@babel/plugin-proposal-numeric-separator" "^7.8.3"
+    "@babel/plugin-proposal-object-rest-spread" "^7.6.2"
+    "@babel/plugin-proposal-optional-chaining" "^7.7.4"
+    "@babel/plugin-syntax-bigint" "^7.8.3"
+    "@babel/plugin-syntax-dynamic-import" "^7.2.0"
+    "@babel/plugin-transform-modules-commonjs" "^7.7.0"
+    "@babel/plugin-transform-runtime" "^7.6.2"
+    "@babel/preset-env" "^7.7.1"
+    "@babel/preset-modules" "^0.1.1"
+    "@babel/preset-react" "^7.7.0"
+    "@babel/preset-typescript" "^7.7.2"
+    "@babel/runtime" "^7.7.2"
+    "@next/react-refresh-utils" "9.3.6"
+    babel-plugin-syntax-jsx "^6.18.0"
+    babel-plugin-transform-define "^2.0.0"
+    babel-plugin-transform-react-remove-prop-types "^0.4.24"
+    browserslist "^4.8.3"
+    css-loader "^3.5.3"
+    find-cache-dir "^3.3.1"
+    fork-ts-checker-webpack-plugin "^3.1.1"
+    jest-worker "^24.9.0"
+    loader-utils "^2.0.0"
+    mini-css-extract-plugin "^0.8.0"
+    mkdirp "^0.5.3"
+    pnp-webpack-plugin "^1.5.0"
+    postcss "^7.0.27"
+    resolve-url-loader "^3.1.1"
+    sass-loader "^8.0.2"
+    style-loader "^1.2.0"
+    styled-jsx "3.2.5"
+    watchpack "2.0.0-beta.13"
+    webpack "^4.43.0"
+    webpack-sources "^1.4.3"
 
 next-tick@~1.0.0:
   version "1.0.0"
