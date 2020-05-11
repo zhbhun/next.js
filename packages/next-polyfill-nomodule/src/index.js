@@ -45,8 +45,14 @@ import 'core-js/features/promise'
 import 'core-js/features/promise/all-settled'
 import 'core-js/features/promise/finally'
 
+/**
+ * @custon url-polyfill 的实现存在问题
+ * @see https://github.com/lifaon74/url-polyfill/commit/83fac7711a5d17972fd81c08751a000feec763d8
+ */
+import 'core-js/web/url'
+
 // Specialized Packages:
 import 'whatwg-fetch'
-import 'url-polyfill'
+// import 'url-polyfill'
 import assign from 'object-assign'
 Object.assign = assign
