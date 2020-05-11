@@ -9,6 +9,9 @@ type WithInAmpMode = {
 }
 
 export function defaultHead(inAmpMode = false) {
+  /**
+   * @custom 去掉内置的 meta 标签，交给外部设置
+   */
   // const head = [<meta charSet="utf-8" />]
   // if (!inAmpMode) {
   //   head.push(<meta name="viewport" content="width=device-width" />)
