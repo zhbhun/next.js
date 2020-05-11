@@ -64,6 +64,7 @@
     "prop-types-exact": "^1.2.0",
     "react-is": "^16.8.6",
     "react-refresh": "^0.8.1",
+    "styled-jsx": "3.2.5",
     "use-subscription": "^1.1.1"
   },
   "peerDependencies": {
@@ -145,7 +146,7 @@
     "lodash.curry": "4.1.1",
     "lru-cache": "5.1.1",
     "nanoid": "2.0.3",
-    "next-devdep": "9.3.6-beta.0",
+    "next-devdep": "9.3.6-beta.1",
     "node-fetch": "2.6.0",
     "ora": "4.0.4",
     "path-to-regexp": "6.1.0",
